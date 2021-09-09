@@ -9,12 +9,12 @@ import com.andro.foodz.databinding.ActivityLoginBinding
 
 
 class Login : Fragment() {
-    lateinit var  Login : ActivityLoginBinding
+    lateinit var  login : ActivityLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
-    ): View? {
-        Login = ActivityLoginBinding.inflate(inflater)
-        return Login.root
+    ): View {
+        login = ActivityLoginBinding.inflate(inflater)
+        return login.root
     }
 
 }
