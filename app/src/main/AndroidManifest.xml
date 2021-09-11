@@ -12,6 +12,12 @@
         android:theme="@style/Theme.FoodZ"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true" />
+        <activity
+            android:name=".ForgotPasswordFragment"
+            android:exported="true" />
+        <activity
             android:name=".Registration"
             android:exported="true"
             tools:ignore="Instantiatable" />
