@@ -7,16 +7,22 @@ import com.andro.foodz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var main:ActivityMainBinding
+    private lateinit var mainActivity:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        main = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(main.root)
+        mainActivity = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mainActivity.root)
 
         supportFragmentManager.beginTransaction().replace(R.id.host,Login()).addToBackStack(null).commit()
+
+
     }
-    fun change(fragment: Fragment){
+    fun change(fragment: Fragment) {
+
         supportFragmentManager.beginTransaction().replace(R.id.host,fragment).addToBackStack(null).commit()
     }
-}
+
+        }
+
+
