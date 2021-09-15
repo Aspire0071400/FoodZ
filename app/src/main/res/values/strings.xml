@@ -8,6 +8,6 @@
     <string name="sign_up_create_account">Sign Up/Create Account</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="enter_your_phone_number">Enter Your Phone Number</string>
-    <string name="todo" tools:ignore="DuplicateDefinition">TODO</string>
+    <string name="todo1" tools:ignore="DuplicateDefinition">TODO</string>
     <string name="submit">Submit</string>
 </resources>
