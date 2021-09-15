@@ -15,6 +15,10 @@ class Registration :Fragment() {
     ): View {
         Registration = ActivityRegistrationBinding.inflate(inflater)
 
+        Registration.regSignupEt.setOnClickListener{
+            (activity as MainActivity).change(Login())
+        }
+
         return Registration.root
     }
 }

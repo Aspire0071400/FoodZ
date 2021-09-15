@@ -18,6 +18,9 @@ class Login : Fragment() {
         login.loginLveTw.setOnClickListener {
             (activity as MainActivity).change(LoginViaEmail())
         }
+        login.loginSignupTv.setOnClickListener{
+            (activity as MainActivity).change(Registration())
+        }
 
         return login.root
 
