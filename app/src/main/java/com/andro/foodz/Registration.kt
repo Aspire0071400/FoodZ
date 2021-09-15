@@ -6,15 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.andro.foodz.databinding.ActivityLoginFragmentBinding
 import com.andro.foodz.databinding.ActivityRegistrationBinding
 
 class Registration :Fragment() {
-    lateinit var Registration: ActivityLoginFragmentBinding
+    lateinit var Registration: ActivityRegistrationBinding
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View {
-        Registration = ActivityLoginFragmentBinding.inflate(layoutInflater)
+        Registration = ActivityRegistrationBinding.inflate(inflater)
+
         return Registration.root
     }
 }

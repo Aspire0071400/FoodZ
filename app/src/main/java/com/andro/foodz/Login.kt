@@ -15,11 +15,9 @@ class Login : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View {
         login = ActivityLoginBinding.inflate(inflater)
-        login.loginViaEmailTV.setOnClickListener{
+        login.loginLveTw.setOnClickListener {
             (activity as MainActivity).change(LoginViaEmail())
         }
-
-
 
         return login.root
 

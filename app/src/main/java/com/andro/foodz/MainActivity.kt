@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(R.id.host,Login()).addToBackStack(null).commit()
 
-
     }
-    fun change(fragment: Fragment) {
+
+    public fun change(fragment:Fragment) {
 
         supportFragmentManager.beginTransaction().replace(R.id.host,fragment).addToBackStack(null).commit()
     }
 
-        }
+}
 
 

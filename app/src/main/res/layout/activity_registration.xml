@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/reg_name_ET"
+        android:id="@+id/reg_name_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/reg_email_ET"
+        android:id="@+id/reg_email_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -53,10 +53,10 @@
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_name_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_name_et" />
 
     <EditText
-        android:id="@+id/reg_number_ET"
+        android:id="@+id/reg_number_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -72,7 +72,7 @@
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_email_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_email_et" />
 
     <Button
         android:id="@+id/reg_btn"
@@ -83,10 +83,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_confirm_pass_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_confirm_pass_et" />
 
     <TextView
-        android:id="@+id/reg_signup_TV"
+        android:id="@+id/reg_signup_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/reg_btn" />
 
     <EditText
-        android:id="@+id/reg_pass_ET"
+        android:id="@+id/reg_pass_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -114,10 +114,10 @@
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_number_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_number_et" />
 
     <EditText
-        android:id="@+id/reg_confirm_pass_ET"
+        android:id="@+id/reg_confirm_pass_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -133,6 +133,6 @@
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_pass_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_pass_et" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
