@@ -1,3 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FoodZ</string>
+    <string name="bittu_tikki_wala">Bittu Tikki Wala</string>
+    <string name="nearest_to_your_house">Nearest To Your House</string>
+    <string name="todo">TODO</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="login_via_email">Login Via Email !</string>
+    <string name="sign_up_create_account">Sign Up/Create Account</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="todo" tools:ignore="DuplicateDefinition">TODO</string>
+    <string name="submit">Submit</string>
 </resources>
