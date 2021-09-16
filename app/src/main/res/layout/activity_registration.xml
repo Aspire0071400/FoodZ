@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration"
-    android:background="@color/floral_white">
+    android:background="#FFF6AB"
+    tools:context=".Registration">
 
     <ImageView
         android:id="@+id/imageView2"

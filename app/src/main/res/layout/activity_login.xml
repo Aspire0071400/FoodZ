@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@color/floral_white">
+    android:background="#FFF6AB"
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,7 +15,7 @@
         android:src="@drawable/btw_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/getotp_btn"
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Login Via Email !"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Sign Up/Create Account"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,17 +60,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_phone_24"
         android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
         android:ems="50"
         android:hint="Enter Your Phone Number"
         android:inputType="phone"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHint="#8F7D7D"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -81,12 +87,15 @@
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="5dp"
+        android:drawableTint="@color/black"
         android:ems="50"
         android:hint="Enter OTP"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:textColorHint="#8F7D7D"
+        android:textColorLink="FF776D6D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
