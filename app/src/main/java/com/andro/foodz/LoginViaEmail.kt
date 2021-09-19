@@ -1,6 +1,5 @@
 package com.andro.foodz
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +12,13 @@ class LoginViaEmail : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
         loginViaEmail = ActivityLoginViaEmailBinding.inflate(inflater)
+        loginViaEmail.lveSignup.setOnClickListener {
+            (activity as MainActivity).change(Registration())
+        }
+
+        loginViaEmail.lveForgetpass.setOnClickListener {
+            (activity as MainActivity).change(ForgotPassword())
+        }
 
 
         return loginViaEmail.root
