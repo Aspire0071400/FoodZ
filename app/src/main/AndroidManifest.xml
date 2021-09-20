@@ -12,17 +12,22 @@
         android:theme="@style/Theme.FoodZ"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".MainPage"
+            android:exported="true"
+            android:label="@string/title_activity_main_page"
+            android:theme="@style/Theme.FoodZ.NoActionBar" />
+        <activity
             android:name=".LoginViaEmail"
             android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ForgotPassword"
@@ -38,9 +43,7 @@
             tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

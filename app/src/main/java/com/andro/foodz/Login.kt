@@ -1,5 +1,6 @@
 package com.andro.foodz
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,9 @@ class Login : Fragment() {
             (activity as MainActivity).change(Registration())
         }
 
+        login.submitBtn.setOnClickListener {
+            activity?.startActivity(Intent(context,MainPage::class.java))
+        }
         return login.root
 
 
