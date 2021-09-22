@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="floral_white">#FFFAF0</color>
     <color name="Hint1">#6D6767</color>
+    <color name="custum_color_drawer">#FFBF00</color>
 </resources>
