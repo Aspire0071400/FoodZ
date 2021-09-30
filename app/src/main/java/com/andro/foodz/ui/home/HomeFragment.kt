@@ -1,5 +1,6 @@
 package com.andro.foodz.ui.home
 
+import android.app.DownloadManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,37 +11,30 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.andro.foodz.R
 import com.andro.foodz.databinding.FragmentHomeBinding
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var fragmenthome : FragmentHomeBinding
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-     /*   val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-     */
-        return root
+        fragmenthome = FragmentHomeBinding.inflate(inflater)
+        fetchData()
+        return fragmenthome.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun fetchData() {
+        val request: RequestQueue= Volley.newRequestQueue(context)  //url
+        val stringRequest:StringRequest = StringRequest(
+            Request.Method.GET,"https://foodzproject.000webhostapp.com/fetch_data.php",{
+                val 
+            }
+
+        )
     }
 }
