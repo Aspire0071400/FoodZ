@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.andro.foodz.R.id.*
 import com.andro.foodz.databinding.MainPageBinding
 
 class MainPage : AppCompatActivity() {
@@ -32,12 +33,12 @@ class MainPage : AppCompatActivity() {
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(viewId = R.id.nav_host_fragment_content_main_page)
+        val navController = findNavController(viewId = nav_host_fragment_content_main_page)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                nav_home, nav_gallery, nav_slideshow
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -51,7 +52,7 @@ class MainPage : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main_page)
+        val navController = findNavController(nav_host_fragment_content_main_page)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
