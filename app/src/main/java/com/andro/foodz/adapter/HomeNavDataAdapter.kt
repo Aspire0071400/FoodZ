@@ -25,7 +25,7 @@ class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): Recycle
         holder.HomeNavDataAdapter.Description.text = data[position].Description
         holder.HomeNavDataAdapter.Category.text = data[position].Category
         Glide.with(holder.HomeNavDataAdapter.root).load(data[position].Image)
-            .into(holder.HomeNavDataAdapter.image)
+            .into(holder.HomeNavDataAdapter.Image)
     }
 
     override fun getItemCount(): Int {
