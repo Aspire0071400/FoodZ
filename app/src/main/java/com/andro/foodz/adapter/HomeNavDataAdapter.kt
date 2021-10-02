@@ -1,5 +1,6 @@
 package com.andro.foodz.adapter
 
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.andro.foodz.databinding.FragmentHomeBinding
 import com.andro.foodz.databinding.HomeNavDataViewBinding
 import com.andro.foodz.model.HomeNavDataModel
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
 class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): RecyclerView.Adapter<HomeNavDataAdapter.Data>() {
     class Data(v: View) : RecyclerView.ViewHolder(v) {
@@ -25,8 +27,8 @@ class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): Recycle
         holder.HomeNavDataAdapter.Price.text = data[position].Price
         holder.HomeNavDataAdapter.Description.text = data[position].Description
         holder.HomeNavDataAdapter.Category.text = data[position].Category
-        Glide.with(holder.HomeNavDataAdapter.Image).load(data[position].Image).placeholder(R.drawable.butterchiken)
-            .into(holder.HomeNavDataAdapter.Image)
+        Glide.with(holder.HomeNavDataAdapter.Imageview).load(data[position].Image)
+            .transform(CircleCrop()).into(holder.HomeNavDataAdapter.Imageview)
     }
 
     override fun getItemCount(): Int {
