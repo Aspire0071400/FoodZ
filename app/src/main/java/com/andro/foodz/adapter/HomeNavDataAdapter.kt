@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.andro.foodz.R
 import com.andro.foodz.databinding.FragmentHomeBinding
 import com.andro.foodz.databinding.HomeNavDataViewBinding
 import com.andro.foodz.model.HomeNavDataModel
@@ -24,7 +25,7 @@ class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): Recycle
         holder.HomeNavDataAdapter.Price.text = data[position].Price
         holder.HomeNavDataAdapter.Description.text = data[position].Description
         holder.HomeNavDataAdapter.Category.text = data[position].Category
-        Glide.with(holder.HomeNavDataAdapter.root).load(data[position].Image)
+        Glide.with(holder.HomeNavDataAdapter.Image).load(data[position].Image).placeholder(R.drawable.butterchiken)
             .into(holder.HomeNavDataAdapter.Image)
     }
 
