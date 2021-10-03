@@ -17,6 +17,8 @@ class Registration :Fragment() {
 
         Registration.regSignupEt.setOnClickListener{
             (activity as MainActivity).change(Login())
+
+
         }
 
         return Registration.root
