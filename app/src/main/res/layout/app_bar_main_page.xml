@@ -11,13 +11,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.FoodZ.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/custum_color_drawer"
-            app:popupTheme="@style/Theme.FoodZ.PopupOverlay" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main_page" />
@@ -31,5 +24,12 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/custum_color_drawer"
+        app:popupTheme="@style/Theme.FoodZ.PopupOverlay" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

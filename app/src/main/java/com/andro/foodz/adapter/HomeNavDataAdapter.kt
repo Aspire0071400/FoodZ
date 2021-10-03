@@ -34,4 +34,6 @@ class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): Recycle
     override fun getItemCount(): Int {
         return data.size
     }
+
+
 }
