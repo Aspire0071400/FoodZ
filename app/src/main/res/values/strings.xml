@@ -28,4 +28,8 @@
     <string name="menu_category">menu_category</string>
     <string name="category">Category</string>
     <string name="mycart">MyCart</string>
+    <string name="fast_food">Fast Food</string>
+    <string name="main_course">Main Course</string>
+    <string name="drinks">Drinks</string>
+    <string name="sweets">Sweets</string>
 </resources>

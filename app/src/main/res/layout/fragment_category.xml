@@ -6,17 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".ui.category.CategoryFragment">
 
-    <TextView
-        android:id="@+id/text_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/main_course_img"
+        android:layout_width="138dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="147dp"
+        android:contentDescription="main course"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/drinks_img"
+        android:layout_width="138dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="drinks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/fast_food_img"
+        android:layout_width="138dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="69dp"
+        android:contentDescription="fast food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_course"
+        tools:ignore="ImageContrastCheck"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/sweets_img"
+        android:layout_width="138dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="sweets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinks"
+        tools:ignore="ImageContrastCheck"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/main_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="69dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/main_course"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fast_food_img"
+        app:layout_constraintEnd_toEndOf="@+id/main_course_img"
+        app:layout_constraintStart_toStartOf="@+id/main_course_img"
+        app:layout_constraintTop_toBottomOf="@+id/main_course_img" />
+
+    <TextView
+        android:id="@+id/drinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/drinks"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sweets_img"
+        app:layout_constraintEnd_toEndOf="@+id/drinks_img"
+        app:layout_constraintStart_toStartOf="@+id/drinks_img"
+        app:layout_constraintTop_toBottomOf="@+id/drinks_img" />
+
+    <TextView
+        android:id="@+id/fast_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/fast_food"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/fast_food_img"
+        app:layout_constraintStart_toStartOf="@+id/fast_food_img"
+        app:layout_constraintTop_toBottomOf="@+id/fast_food_img" />
+
+    <TextView
+        android:id="@+id/sweets"
+        android:layout_width="50dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/sweets"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/sweets_img"
+        app:layout_constraintStart_toStartOf="@+id/sweets_img"
+        app:layout_constraintTop_toBottomOf="@+id/sweets_img" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.andro.foodz.R.id.*
 import com.andro.foodz.databinding.MainPageBinding
 
@@ -54,5 +55,10 @@ class MainPage : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(nav_host_fragment_content_main_page)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    public fun change(fragment: Fragment) {
+
+        supportFragmentManager.beginTransaction().replace(R.id.app_bar_main_page,fragment).addToBackStack(null).commit()
     }
 }

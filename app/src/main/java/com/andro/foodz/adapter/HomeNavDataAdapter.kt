@@ -1,16 +1,12 @@
 package com.andro.foodz.adapter
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.andro.foodz.R
-import com.andro.foodz.databinding.FragmentHomeBinding
 import com.andro.foodz.databinding.HomeNavDataViewBinding
 import com.andro.foodz.model.HomeNavDataModel
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
 class HomeNavDataAdapter (private val data:ArrayList<HomeNavDataModel>): RecyclerView.Adapter<HomeNavDataAdapter.Data>() {
     class Data(v: View) : RecyclerView.ViewHolder(v) {

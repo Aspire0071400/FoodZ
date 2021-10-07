@@ -16,7 +16,6 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-
 class HomeFragment : Fragment() {
     private lateinit var fragmenthome : FragmentHomeBinding
     private var data = arrayListOf<HomeNavDataModel>()
