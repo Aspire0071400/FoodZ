@@ -15,13 +15,13 @@
         android:theme="@style/Theme.FoodZ"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ui.category.catfrag.Sweets"
+            android:name=".ui.sweets.Sweets"
             android:exported="true" />
         <activity
-            android:name=".ui.category.catfrag.FastFood"
+            android:name=".ui.fastfood.FastFood"
             android:exported="true" />
         <activity
-            android:name=".ui.category.catfrag.Drinks"
+            android:name=".ui.drinks.Drinks"
             android:exported="true" />
         <activity
             android:name=".MainPage"
