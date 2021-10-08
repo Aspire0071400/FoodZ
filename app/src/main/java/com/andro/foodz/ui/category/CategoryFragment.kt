@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.andro.foodz.MainPage
 import com.andro.foodz.databinding.FragmentCategoryBinding
+import com.andro.foodz.ui.category.subcategory.MainCourse
 
 class CategoryFragment : Fragment() {
     lateinit var fragmentcategory : FragmentCategoryBinding
@@ -14,7 +16,7 @@ class CategoryFragment : Fragment() {
     ): View {
         fragmentcategory = FragmentCategoryBinding.inflate(inflater)
         fragmentcategory.mainCourseImg.setOnClickListener {
-            //(activity as MainPage).change(MainCourse())
+            (activity as MainPage).change(MainCourse())
         }
 
         fragmentcategory.drinksImg.setOnClickListener {
@@ -30,7 +32,7 @@ class CategoryFragment : Fragment() {
         }
 
         fragmentcategory.mainCourse.setOnClickListener {
-            //(activity as MainPage).change(MainCourse())
+            (activity as MainPage).change(MainCourse())
         }
 
         fragmentcategory.drinks.setOnClickListener {
@@ -44,7 +46,6 @@ class CategoryFragment : Fragment() {
         fragmentcategory.sweets.setOnClickListener {
            // (activity as MainPage).change(Sweets())
         }
-
 
         return fragmentcategory.root
     }
