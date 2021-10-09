@@ -29,7 +29,6 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/activity_drinks.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/activity_fast_food.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/activity_main_course.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/activity_sweets.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/app_bar_main_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/cat_nav_data_view.xml" value="0.1388888888888889" />
@@ -42,12 +41,19 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/main_page.xml" value="0.2" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/nav_header_main_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/menu/main_page.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/menu/main_page_drawer.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/menu/main_page_drawer.xml" value="0.33" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_forget_password.xml" value="0.3578125" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_login.xml" value="0.3578125" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_login_via_email.xml" value="0.3578125" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_registration.xml" value="0.3523076923076923" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/activity_login.xml" value="0.2171875" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/activity_login_via_email.xml" value="0.2171875" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/activity_registration.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/fragment_category.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/fragment_home.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/layout/fragment_mycart.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/vkage/AndroidStudioProjects/app/src/main/res/menu/main_page_drawer.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>
