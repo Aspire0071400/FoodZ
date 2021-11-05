@@ -59,6 +59,6 @@ class MainPage : AppCompatActivity() {
 
     public fun change(fragment: Fragment) {
 
-        supportFragmentManager.beginTransaction().replace(R.id.app_bar_main_page,fragment).addToBackStack(null).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.drawer_layout,fragment).addToBackStack(null).commit()
     }
 }

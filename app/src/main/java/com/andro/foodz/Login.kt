@@ -12,7 +12,6 @@ import com.andro.foodz.databinding.ActivityLoginBinding
 class Login : Fragment() {
     lateinit var  login : ActivityLoginBinding
 
-
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View {
         login = ActivityLoginBinding.inflate(inflater)
@@ -27,9 +26,6 @@ class Login : Fragment() {
             activity?.startActivity(Intent(context,MainPage::class.java))
         }
         return login.root
-
-
-
 
     }
 
