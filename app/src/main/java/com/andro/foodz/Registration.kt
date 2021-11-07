@@ -13,15 +13,17 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.andro.foodz.databinding.ActivityRegistrationBinding
 
 
-class Registration :Fragment() {
+class Registration : Fragment() {
     lateinit var Registration: ActivityRegistrationBinding
+
     //Variable for Firebase Authentication
     private lateinit var auth: FirebaseAuth
 
-    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
 
-        auth= FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         Registration = ActivityRegistrationBinding.inflate(inflater)
 
         //Registering the User
@@ -29,59 +31,68 @@ class Registration :Fragment() {
             val email = Registration.regEmailEt.text.toString()
             val password = Registration.regPassEt.text.toString()
             val confirmPassword = Registration.regConfirmPassEt.text.toString()
-            if(email.trim().isNotEmpty() && password.trim().isNotEmpty()
-                && confirmPassword.trim().isNotEmpty()){
-                if(password == confirmPassword){
+            if (email.trim().isNotEmpty() && password.trim().isNotEmpty()
+                && confirmPassword.trim().isNotEmpty()
+            ) {
+                if (password == confirmPassword) {
                     createAccount(email, confirmPassword)
                 } else {
-                    Snackbar.make(Registration.root,
+                    Snackbar.make(
+                        Registration.root,
                         "Password Mismatch !!",
-                        Snackbar.LENGTH_LONG).show()
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             } else {
-                Snackbar.make(Registration.root,
+                Snackbar.make(
+                    Registration.root,
                     "Please enter the credentials !!",
-                    Snackbar.LENGTH_LONG).show()
+                    Snackbar.LENGTH_LONG
+                ).show()
             }
-
-
-
-        Registration = ActivityRegistrationBinding.inflate(inflater)
-
-        Registration.regSignupEt.setOnClickListener{
-            (activity as MainActivity).change(Login())
 
         }
 
+        Registration.regSignupEt.setOnClickListener {
+            (activity as MainActivity).change(LoginViaEmail())
 
+        }
 
-    }
         return Registration.root
-}
+    }
 
-    private fun createAccount(email: String,confirmPasswword: String) {
-        auth.createUserWithEmailAndPassword(email, confirmPasswword).addOnCompleteListener {task ->
+    private fun createAccount(email: String, confirmPasswword: String) {
+        auth.createUserWithEmailAndPassword(email, confirmPasswword).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
                 val user = auth.currentUser
                 user!!.sendEmailVerification()
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(context,
+                            Toast.makeText(
+                                context,
                                 "Please Check Your Email for verification to Complete Your Registration.",
-                                Toast.LENGTH_LONG).show()
+                                Toast.LENGTH_LONG
+                            ).show()
                             (activity as MainActivity).change(LoginViaEmail())
                         } else {
                             // If sign in fails, display a message to the user
                             if (task.exception is FirebaseAuthUserCollisionException) {
-                                Toast.makeText(context, "User already registered.", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    context,
+                                    "User already registered.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             } else {
-                                Toast.makeText(context, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    context,
+                                    "Authentication failed.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                         }
                     }
             }
-
 
 
         }

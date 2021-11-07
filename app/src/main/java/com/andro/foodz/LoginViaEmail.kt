@@ -13,41 +13,42 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.andro.foodz.databinding.ActivityLoginViaEmailBinding
 
-
 class LoginViaEmail : Fragment() {
     lateinit var loginViaEmail: ActivityLoginViaEmailBinding
     //Variable for Firebase Authentication
-    //private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
-       /** auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         loginViaEmail= ActivityLoginViaEmailBinding.inflate(inflater)
 
-        if(auth.currentUser != null && auth.currentUser!!.isEmailVerified){
-            activity?.startActivity(Intent(context, MainCourse:: class.java))
+        /*if(auth.currentUser != null && auth.currentUser!!.isEmailVerified){
+            activity?.startActivity(Intent(context, MainPage:: class.java))
             activity?.finish()
-        }
-        //Inflating to MainActivity
+        }*/
+            //Inflating to MainActivity
        loginViaEmail.LVEBtn.setOnClickListener {
             val email = loginViaEmail.lveEmailEt.text.toString()
             val password = loginViaEmail.lvePassEt.text.toString()
             if (email.trim().isNotEmpty() && password.trim().isNotEmpty()) {
-               if(email.trim() == "varunkaushik993@gmail.com" && password.trim() == "8802088158"){
-                    activity?.startActivity(Intent(context, MainCourse::class.java))
+                login(email, password)
+                Toast.makeText(requireContext(),"Success",Toast.LENGTH_SHORT).show()
+                /*if(email.trim() == "varunkaushik993@gmail.com" && password.trim() == "8802088158"){
+                    activity?.startActivity(Intent(context, MainPage::class.java))
                     //activity?.finish()
+                   Toast.makeText(requireContext(),"Success1",Toast.LENGTH_SHORT).show()
                 } else {
                     login(email, password)
-                }
+                   Toast.makeText(requireContext(),"Success2",Toast.LENGTH_SHORT).show()
+                }*/
             } else {
                 Snackbar.make(loginViaEmail.root,
                     "Please enter the credentials !!",
                     Snackbar.LENGTH_LONG).show()
             }
             //activity?.startActivity(Intent(context, MainPage::class.java))
-        }*/
+        }
 
-
-        loginViaEmail = ActivityLoginViaEmailBinding.inflate(inflater)
         loginViaEmail.lveSignup.setOnClickListener {
             (activity as MainActivity).change(Registration())
         }
@@ -60,7 +61,7 @@ class LoginViaEmail : Fragment() {
         return loginViaEmail.root
     }
 
-    /**private fun login(email: String, password: String) {
+    private fun login(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -85,5 +86,5 @@ class LoginViaEmail : Fragment() {
                     }
                 }
             }
-    }*/
+    }
 }
