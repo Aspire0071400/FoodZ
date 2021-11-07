@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.andro.foodz.databinding.ActivityLoginViaEmailBinding
-import com.andro.foodz.ui.category.subcategory.MainCourse
+
 
 class LoginViaEmail : Fragment() {
     lateinit var loginViaEmail: ActivityLoginViaEmailBinding
