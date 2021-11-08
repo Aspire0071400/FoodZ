@@ -57,6 +57,8 @@ class Login : Fragment() {
             if(login.loginNoEt.text.toString().trim().isNotEmpty()
                 and login.loginOtpEt.text.toString().trim().isNotEmpty()){
                 signIn(credential)
+                activity?.startActivity(Intent(context,MainPage::class.java))
+
             }
             //Snackbar.make(forgotPasswordActivity.root,"Fields are Empty!",Snackbar.LENGTH_LONG).show()
         }

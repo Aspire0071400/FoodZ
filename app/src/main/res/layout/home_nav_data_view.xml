@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/HomeView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-
+    app:cardBackgroundColor="@color/browser_actions_bg_grey"
     app:cardCornerRadius="12dp"
     app:cardElevation="3dp"
     app:contentPadding="4dp">
@@ -29,6 +29,8 @@
             android:layout_width="175dp"
             android:layout_height="27dp"
             android:layout_marginStart="25dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,6 +42,8 @@
             android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/rupee"
             android:drawablePadding="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/ProductName" />
 
@@ -49,6 +53,8 @@
             android:layout_height="20dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/Price"
             app:layout_constraintTop_toBottomOf="@+id/ProductName" />
 

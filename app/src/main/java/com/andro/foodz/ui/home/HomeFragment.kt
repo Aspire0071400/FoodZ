@@ -14,18 +14,15 @@ class HomeFragment : Fragment() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
         fragmenthome = FragmentHomeBinding.inflate(inflater)
-        return fragmenthome.root
+
         layoutManager = LinearLayoutManager(context)
         fragmenthome.homeNavDataViewcycle.layoutManager =layoutManager
 
         adapter = HomeNavDataAdapter()
         fragmenthome.homeNavDataViewcycle.adapter = adapter
-
+        return fragmenthome.root
     }
 }

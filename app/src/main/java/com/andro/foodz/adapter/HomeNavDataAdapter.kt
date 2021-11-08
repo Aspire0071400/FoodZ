@@ -13,14 +13,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
 
-    private var productname = arrayOf("shaahi paneer","coke")
-    private var price = arrayOf("240","90")
-    private var category = arrayOf("main-course","drink")
+    private val productname = arrayOf("shaahi-paneer","coke","Aloo-Tikki")
+    private val price = arrayOf("240","90","120")
+    private val category = arrayOf("main-course","drink","fast-food")
     //private var images = intArrayOf()
 
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): HomeNavDataAdapter.ViewHolder {
-        val v=LayoutInflater.from(parent.context).inflate(R.layout.home_nav_data_view,parent,false)
+        val v:View=LayoutInflater.from(parent.context).inflate(R.layout.home_nav_data_view,parent,false)
         return ViewHolder(v)
     }
 
@@ -40,18 +40,20 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
         var itemProductName: TextView
         var itemPrice: TextView
         var itemCategory: TextView
-        var itemRemove: FloatingActionButton
-        var itemAdd: FloatingActionButton
-        var itemQuantity: TextView
+        //var itemRemove: FloatingActionButton
+        //var itemAdd: FloatingActionButton
+        //var itemQuantity: TextView
 
         init {
             itemImage=itemView.findViewById(R.id.image)
             itemProductName=itemView.findViewById(R.id.ProductName)
             itemPrice=itemView.findViewById(R.id.Price)
             itemCategory=itemView.findViewById(R.id.Category)
-            itemRemove=itemView.findViewById(R.id.remove)
-            itemQuantity=itemView.findViewById(R.id.qty)
-            itemAdd=itemView.findViewById(R.id.add)
+           // itemRemove=itemView.findViewById(R.id.remove)
+           // itemQuantity=itemView.findViewById(R.id.qty)
+           // itemAdd=itemView.findViewById(R.id.add)
+
+
         }
     }
 }
