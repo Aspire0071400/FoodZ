@@ -11,21 +11,23 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.andro.foodz.databinding.ActivityForgetPasswordBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ForgotPassword : Fragment() {
     lateinit var forgotPassword:ActivityForgetPasswordBinding
-    //private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
        //auth = FirebaseAuth.getInstance()
         forgotPassword = ActivityForgetPasswordBinding.inflate(inflater)
 
          //Sending Password reset mail
-        /**forgotPassword.button.setOnClickListener {
+        forgotPassword.button.setOnClickListener {
             val email = forgotPassword.editTextTextEmailAddress.text.toString()
             if (email.trim().isNotEmpty()){
                 val eMail = forgotPassword.editTextTextEmailAddress.text.toString()
-                //auth = Firebase.auth
+                auth = Firebase.auth
                 auth.sendPasswordResetEmail(eMail)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -50,7 +52,7 @@ class ForgotPassword : Fragment() {
                     "Please enter the credentials !!",
                     Snackbar.LENGTH_LONG).show()
             }
-        }*/
+        }
 
         return forgotPassword.root
     }
