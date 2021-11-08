@@ -39,7 +39,7 @@ class MainPage : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                nav_home, nav_category, nav_mycart
+                nav_home, nav_profile, nav_mycart
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

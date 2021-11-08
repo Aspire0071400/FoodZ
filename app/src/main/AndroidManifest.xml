@@ -14,27 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodZ"
         tools:ignore="AllowBackup">
-        <activity
-            android:name=".ui.category.subcategory.Sweets"
-            android:exported="true" />
-        <activity
-            android:name=".ui.category.subcategory.FastFood"
-            android:exported="true" />
-        <activity
-            android:name=".ui.category.subcategory.Drinks"
-            android:exported="true" />
-        <activity
-            android:name=".ui.category.subcategory.MainCourse"
-            android:exported="true" />
-        <activity
-            android:name=".ui.sweets.Sweets"
-            android:exported="true" />
-        <activity
-            android:name=".ui.fastfood.FastFood"
-            android:exported="true" />
-        <activity
-            android:name=".ui.drinks.Drinks"
-            android:exported="true" />
+
         <activity
             android:name=".MainPage"
             android:exported="true"
