@@ -54,6 +54,7 @@ class ForgotPassword : Fragment() {
             }
         }
 
+
         return forgotPassword.root
     }
 }
