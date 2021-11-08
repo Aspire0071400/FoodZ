@@ -12,10 +12,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
 
-    private val productname = arrayOf("shaahi-paneer","coke","Aloo-Tikki")
-    private val price = arrayOf("240","90","120")
-    private val category = arrayOf("main-course","drink","fast-food")
-    private var explanation = arrayOf("per plate","2L","per plate")
+    private val productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori","Chole-Bathure","Pav Bhaji","Dal Makhani","Lassi","Matar Kulcha","Gulab Jamun","Rasgulla","Rasmalai","Stick Kulfi","chilli Potato",)
+    private val price = arrayOf("140","90","120","100","70","147","130","50","110","25","25","40","49","210")
+    private val category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
+    private var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate","Per Plate","Per Plate","Per Plate","Per Glass","Per Plate","Per Piece","Per Piece","Per Piece","Per Serving","Per Plate")
     private var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki)
 
 
