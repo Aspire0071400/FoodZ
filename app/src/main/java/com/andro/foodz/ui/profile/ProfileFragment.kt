@@ -11,10 +11,9 @@ import com.andro.foodz.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
     lateinit var fragmentprofile : FragmentProfileBinding
 
-    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
-    ): View {
-
-
-        return fragmentprofile.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?
+    ): View? {
+        fragmentprofile = FragmentProfileBinding.inflate(inflater)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 }
