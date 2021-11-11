@@ -1,10 +1,12 @@
 package com.andro.foodz.adapter
 
+import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.andro.foodz.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -55,7 +57,11 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
             itemExplain = itemView.findViewById(R.id.explain)
             itemAdd=itemView.findViewById(R.id.add)
 
+            itemView.setOnClickListener {
+                val itemposition : Int = absoluteAdapterPosition
 
+                Toast.makeText(itemView.context,"you clicked ${productname[position]}",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

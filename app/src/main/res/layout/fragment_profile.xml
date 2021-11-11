@@ -8,7 +8,7 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="5dp"
-        android:editable="true"
+        android:editable="false"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -26,10 +26,11 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Deprecated" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/profile_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -37,7 +38,7 @@
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="5dp"
-        android:editable="true"
+        android:editable="false"
         android:ems="10"
         android:hint="E-Mail"
         android:inputType="textEmailAddress"
@@ -47,10 +48,11 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_name"
+        tools:ignore="Deprecated" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/profile_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -58,7 +60,7 @@
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="5dp"
-        android:editable="true"
+        android:editable="false"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone"
@@ -68,10 +70,11 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_email"
+        tools:ignore="Deprecated" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/profile_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,7 +82,7 @@
         android:layout_marginEnd="16dp"
         android:drawableLeft="@drawable/ic_baseline_home_24"
         android:drawablePadding="5dp"
-        android:editable="true"
+        android:editable="false"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Address (Multiple-Line)"
@@ -90,17 +93,19 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_number"
+        tools:ignore="Deprecated" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/profile_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Save"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_address" />
 
     <TextView
         android:id="@+id/textView3"
@@ -117,9 +122,21 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/profile_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/profile_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="edit"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

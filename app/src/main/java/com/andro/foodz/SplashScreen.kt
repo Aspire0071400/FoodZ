@@ -13,7 +13,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(splashscreen.root)
 
         Thread {
-            Thread.sleep(2000)
+            Thread.sleep(1200)
             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }.start()
