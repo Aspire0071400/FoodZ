@@ -13,22 +13,28 @@ import com.google.android.material.snackbar.Snackbar
 class ProfileFragment : Fragment() {
     lateinit var fragmentprofile : FragmentProfileBinding
 
+    var name: String? =null
+    var email: String? =null
+    var number: String? =null
+    var address: String? =null
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
         fragmentprofile = FragmentProfileBinding.inflate(inflater)
-        val profdata = arrayOf("","","","")
+
 
 
         fragmentprofile.profileSave.setOnClickListener {
-            profdata[0] = fragmentprofile.profileName.text.toString()
-            profdata[1] = fragmentprofile.profileEmail.text.toString()
-            profdata[2] = fragmentprofile.profileNumber.text.toString()
-            profdata[3] = fragmentprofile.profileAddress.text.toString()
-
+            name   = fragmentprofile.profileName.text.toString()
+            email  =fragmentprofile.profileEmail.text.toString()
+            number =fragmentprofile.profileNumber.text.toString()
+            address= fragmentprofile.profileAddress.text.toString()
             fragmentprofile.profileEdit.isVisible=true
             fragmentprofile.profileSave.isVisible=false
             Snackbar.make(fragmentprofile.root,"Your Profile has been saved",Snackbar.LENGTH_LONG).show()
+
 
 
         }
@@ -36,17 +42,22 @@ class ProfileFragment : Fragment() {
         fragmentprofile.profileEdit.setOnClickListener {
             fragmentprofile.profileSave.isVisible=true
             fragmentprofile.profileEdit.isVisible=false
-            fragmentprofile.profileName.editableText
-            fragmentprofile.profileEmail.editableText
-            fragmentprofile.profileNumber.editableText
-            fragmentprofile.profileAddress.editableText
+
+            if (name!=null) {
+                fragmentprofile.profileName.setText(name)
+                fragmentprofile.profileEmail.setText(email)
+                fragmentprofile.profileNumber.setText(number)
+                fragmentprofile.profileAddress.setText(address)
+            }else{
+                fragmentprofile.profileName.setText("")
+                fragmentprofile.profileEmail.setText("")
+                fragmentprofile.profileNumber.setText("")
+                fragmentprofile.profileAddress.setText("")
+
+            }
 
         }
 
-        fragmentprofile.profileName.setText(profdata[0])
-        fragmentprofile.profileEmail.setText(profdata[1])
-        fragmentprofile.profileNumber.setText(profdata[2])
-        fragmentprofile.profileAddress.setText(profdata[3])
         return fragmentprofile.root
     }
 }

@@ -14,12 +14,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
 
-    private val productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori","Chole-Bathure","Pav Bhaji","Dal Makhani","Lassi","Matar Kulcha","Gulab Jamun","Rasgulla","Rasmalai","Stick Kulfi","chilli Potato")
-    private val price = arrayOf("140","90","120","100","70","147","130","50","110","25","25","40","49","210")
-    private val category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
+    private var productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori","Chole-Bathure","Pav Bhaji","Dal Makhani","Lassi","Matar Kulcha","Gulab Jamun","Rasgulla","Rasmalai","Stick Kulfi","chilli Potato")
+    private var price = arrayOf("140","90","120","100","70","147","130","50","110","25","25","40","49","210")
+    private var category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
     private var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate","Per Plate","Per Plate","Per Plate","Per Glass","Per Plate","Per Piece","Per Piece","Per Piece","Per Serving","Per Plate")
     private var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori,R.drawable.cholebhature,R.drawable.pavbhaji,R.drawable.dalmakhani,R.drawable.lassi,R.drawable.matarkulcha,R.drawable.gulabjamun,R.drawable.rasgulla,R.drawable.rasmalai,R.drawable.kulfi,R.drawable.chillipotato)
 
+    //public var productname0 =
 
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): HomeNavDataAdapter.ViewHolder {
@@ -57,10 +58,11 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
             itemExplain = itemView.findViewById(R.id.explain)
             itemAdd=itemView.findViewById(R.id.add)
 
-            itemView.setOnClickListener {
+            itemAdd.setOnClickListener {
                 val itemposition : Int = absoluteAdapterPosition
 
                 Toast.makeText(itemView.context,"you clicked ${productname[position]}",Toast.LENGTH_SHORT).show()
+
             }
         }
     }

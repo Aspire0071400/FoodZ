@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.andro.foodz.databinding.ActivityRegistrationBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.andro.foodz.databinding.ActivityRegistrationBinding
 
 
 class Registration : Fragment() {
@@ -18,7 +17,6 @@ class Registration : Fragment() {
 
     //Variable for Firebase Authentication
     private lateinit var auth: FirebaseAuth
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -50,6 +48,7 @@ class Registration : Fragment() {
                     Snackbar.LENGTH_LONG
                 ).show()
             }
+
 
         }
 
