@@ -10,12 +10,11 @@ import com.andro.foodz.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
-     public val productname1= arrayOf("")
-     public val price1= arrayOf("")
-     public val category1= arrayOf("")
-     public val explanation1= arrayOf("")
-     public val pic1 = intArrayOf()
-
+      val productname1= HomeNavDataAdapter().productname0
+      val price1= HomeNavDataAdapter().price0
+      val category1= HomeNavDataAdapter().category0
+      val explanation1= HomeNavDataAdapter().explanation0
+      //val pic1 = HomeNavDataAdapter().pic0
 
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): MyCartDataAdapter.ViewHolder {
@@ -24,15 +23,15 @@ class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return productname1.size
+        TODO()
     }
 
     override fun onBindViewHolder(holder:MyCartDataAdapter.ViewHolder, position: Int) {
-        holder.itemProductName.text = productname1[position]
-        holder.itemPrice.text = price1[position]
-        holder.itemCategory.text = category1[position]
-        holder.itemExplain.text = explanation1[position]
-        holder.itemImage.setImageResource(pic1[position])
+        holder.itemProductName.text = productname1
+        holder.itemPrice.text = price1
+        holder.itemCategory.text = category1
+        holder.itemExplain.text = explanation1
+       // holder.itemImage.setImageResource(pic1)
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
