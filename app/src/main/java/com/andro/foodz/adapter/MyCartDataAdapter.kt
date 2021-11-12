@@ -10,11 +10,11 @@ import com.andro.foodz.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
-      val productname1= HomeNavDataAdapter().productname0
-      val price1= HomeNavDataAdapter().price0
-      val category1= HomeNavDataAdapter().category0
-      val explanation1= HomeNavDataAdapter().explanation0
-      //val pic1 = HomeNavDataAdapter().pic0
+    var productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori")
+    var price = arrayOf("140","90","120","100")
+    var category = arrayOf("Main Course","Drink","Fast Food","Fast Food")
+    var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate")
+    var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori)
 
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): MyCartDataAdapter.ViewHolder {
@@ -23,15 +23,15 @@ class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        TODO()
+        return productname.size
     }
 
     override fun onBindViewHolder(holder:MyCartDataAdapter.ViewHolder, position: Int) {
-        holder.itemProductName.text = productname1
-        holder.itemPrice.text = price1
-        holder.itemCategory.text = category1
-        holder.itemExplain.text = explanation1
-       // holder.itemImage.setImageResource(pic1)
+        holder.itemProductName.text = productname[position]
+        holder.itemPrice.text = price[position]
+        holder.itemCategory.text = category[position]
+        holder.itemExplain.text = explanation[position]
+        holder.itemImage.setImageResource(pic[position])
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -49,6 +49,7 @@ class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
             itemCategory=itemView.findViewById(R.id.Category2)
             itemExplain = itemView.findViewById(R.id.explain2)
             itemRemove=itemView.findViewById(R.id.remove)
+
 
         }
     }

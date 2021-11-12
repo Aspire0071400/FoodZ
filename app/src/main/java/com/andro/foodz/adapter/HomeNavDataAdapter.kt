@@ -1,6 +1,5 @@
 package com.andro.foodz.adapter
 
-import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,11 +18,7 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
     public var category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
     public var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate","Per Plate","Per Plate","Per Plate","Per Glass","Per Plate","Per Piece","Per Piece","Per Piece","Per Serving","Per Plate")
     public var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori,R.drawable.cholebhature,R.drawable.pavbhaji,R.drawable.dalmakhani,R.drawable.lassi,R.drawable.matarkulcha,R.drawable.gulabjamun,R.drawable.rasgulla,R.drawable.rasmalai,R.drawable.kulfi,R.drawable.chillipotato)
-    var productname0 =null
-    var price0=null
-    var category0=null
-    var explanation0=null
-    var pic0=null
+
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): HomeNavDataAdapter.ViewHolder {
         val v:View=LayoutInflater.from(parent.context).inflate(R.layout.home_nav_data_view,parent,false)
@@ -61,21 +56,8 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
             itemAdd=itemView.findViewById(R.id.add)
 
             itemAdd.setOnClickListener {
-                val itemposition : Int = absoluteAdapterPosition
-                var productpos = productname[position]
-                var productname0 = productpos
+                val position : Int = bindingAdapterPosition
 
-                var pricepos = price[position]
-                var price0 =  pricepos
-
-                var categorypos = category[position]
-                var category0 =categorypos
-
-                var explanationpos = explanation[position]
-                var explanation0 = explanationpos
-
-               // var picpos = pic[position]
-               // var pic0= picpos
 
                 Toast.makeText(itemView.context," ${productname[position]}Added to Cart",Toast.LENGTH_SHORT).show()
 
