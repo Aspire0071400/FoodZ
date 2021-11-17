@@ -33,13 +33,14 @@ class ProfileFragment : Fragment() {
         fragmentprofile.profileSave.setOnClickListener {
             val user = auth.currentUser
             name = user?.displayName.toString()
+            name = fragmentprofile.profileName.text.toString()
             email = user?.email.toString()
             Toast.makeText(requireContext(), "$name, $email", Toast.LENGTH_SHORT).show()
 
             fragmentprofile.profileName.setText(name)
             fragmentprofile.profileEmail.setText(email)
-            //number =fragmentprofile.profileNumber.text.toString()
-            //address= fragmentprofile.profileAddress.text.toString()
+            number =fragmentprofile.profileNumber.text.toString()
+            address= fragmentprofile.profileAddress.text.toString()
             fragmentprofile.profileEdit.isVisible=true
             fragmentprofile.profileSave.isVisible=false
             Snackbar.make(fragmentprofile.root,"Your Profile has been saved",Snackbar.LENGTH_LONG).show()
