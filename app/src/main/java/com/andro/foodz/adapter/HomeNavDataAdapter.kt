@@ -1,26 +1,30 @@
 package com.andro.foodz.adapter
 
+import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.andro.foodz.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.lang.reflect.Array
 
 
 class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
 
-    public var productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori","Chole-Bathure","Pav Bhaji","Dal Makhani","Lassi","Matar Kulcha","Gulab Jamun","Rasgulla","Rasmalai","Stick Kulfi","chilli Potato")
-    public var price = arrayOf("140","90","120","100","70","147","130","50","110","25","25","40","49","210")
-    public var category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
-    public var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate","Per Plate","Per Plate","Per Plate","Per Glass","Per Plate","Per Piece","Per Piece","Per Piece","Per Serving","Per Plate")
-    public var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori,R.drawable.cholebhature,R.drawable.pavbhaji,R.drawable.dalmakhani,R.drawable.lassi,R.drawable.matarkulcha,R.drawable.gulabjamun,R.drawable.rasgulla,R.drawable.rasmalai,R.drawable.kulfi,R.drawable.chillipotato)
+    var productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori","Chole-Bathure","Pav Bhaji","Dal Makhani","Lassi","Matar Kulcha","Gulab Jamun","Rasgulla","Rasmalai","Stick Kulfi","chilli Potato")
+    var price = arrayOf("140","90","120","100","70","147","130","50","110","25","25","40","49","210")
+    var category = arrayOf("Main Course","Drink","Fast Food","Fast Food","Main Course","Fast Food","Main Course","Drink","Fast Food","Sweets","Sweets","Sweets","Sweets","Fast Food")
+    var explain = arrayOf("Per Plate","2L","Per Plate","Per Plate","Per Plate","Per Plate","Per Plate","Per Glass","Per Plate","Per Piece","Per Piece","Per Piece","Per Serving","Per Plate")
+    var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori,R.drawable.cholebhature,R.drawable.pavbhaji,R.drawable.dalmakhani,R.drawable.lassi,R.drawable.matarkulcha,R.drawable.gulabjamun,R.drawable.rasgulla,R.drawable.rasmalai,R.drawable.kulfi,R.drawable.chillipotato)
+    lateinit var pos:String
 
 
-    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): HomeNavDataAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): ViewHolder {
         val v:View=LayoutInflater.from(parent.context).inflate(R.layout.home_nav_data_view,parent,false)
         return ViewHolder(v)
     }
@@ -29,16 +33,16 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
         return productname.size
     }
 
-    override fun onBindViewHolder(holder: HomeNavDataAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemProductName.text = productname[position]
         holder.itemPrice.text = price[position]
         holder.itemCategory.text = category[position]
-        holder.itemExplain.text = explanation[position]
+        holder.itemExplain.text = explain[position]
         holder.itemImage.setImageResource(pic[position])
-
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+   inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
         var itemProductName: TextView
         var itemPrice: TextView
@@ -56,10 +60,13 @@ class HomeNavDataAdapter:RecyclerView.Adapter<HomeNavDataAdapter.ViewHolder>() {
             itemAdd=itemView.findViewById(R.id.add)
 
             itemAdd.setOnClickListener {
-                val position : Int = bindingAdapterPosition
+                pos = productname[bindingAdapterPosition]
 
+                Toast.makeText(itemView.context," ${productname[absoluteAdapterPosition]} Added to Cart",Toast.LENGTH_SHORT).show()
+            }
 
-                Toast.makeText(itemView.context," ${productname[position]}Added to Cart",Toast.LENGTH_SHORT).show()
+            itemView.setOnClickListener {
+                Toast.makeText(itemView.context,"You Clicked ${productname[bindingAdapterPosition]}",Toast.LENGTH_SHORT).show()
 
             }
         }

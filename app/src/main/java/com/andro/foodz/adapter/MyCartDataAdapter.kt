@@ -1,8 +1,8 @@
 package com.andro.foodz.adapter
 
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,11 +10,11 @@ import com.andro.foodz.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
-    var productname = arrayOf("Shaahi-Paneer","Coke","Aloo-Tikki","Raj-Kachori")
-    var price = arrayOf("140","90","120","100")
-    var category = arrayOf("Main Course","Drink","Fast Food","Fast Food")
-    var explanation = arrayOf("Per Plate","2L","Per Plate","Per Plate")
-    var pic = intArrayOf(R.drawable.shahipaneer,R.drawable.coke,R.drawable.alootikki,R.drawable.rajkachori)
+    var productname1 = HomeNavDataAdapter().productname
+    var price1       = HomeNavDataAdapter().price
+    var category1    = HomeNavDataAdapter().category
+    var explain1     = HomeNavDataAdapter().explain
+    var pic1         = HomeNavDataAdapter().pic
 
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): MyCartDataAdapter.ViewHolder {
@@ -23,18 +23,19 @@ class MyCartDataAdapter:RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return productname.size
+        return productname1.size
     }
 
     override fun onBindViewHolder(holder:MyCartDataAdapter.ViewHolder, position: Int) {
-        holder.itemProductName.text = productname[position]
-        holder.itemPrice.text = price[position]
-        holder.itemCategory.text = category[position]
-        holder.itemExplain.text = explanation[position]
-        holder.itemImage.setImageResource(pic[position])
+        holder.itemProductName.text = productname1[position]
+        holder.itemPrice.text = price1[position]
+        holder.itemCategory.text = category1[position]
+        holder.itemExplain.text = explain1[position]
+        holder.itemImage.setImageResource(pic1[position])
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+
+   inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
         var itemProductName: TextView
         var itemPrice: TextView
