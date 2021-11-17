@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProjects/FoodZ/app/src/main/res/layout/activity_login.xml" value="0.20885416666666667" />
+        <entry key="..\:/AndroidProjects/FoodZ/app/src/main/res/layout/activity_registration.xml" value="0.371875" />
         <entry key="..\:/AndroidProjects/FoodZ/app/src/main/res/layout/fragment_profile.xml" value="0.371875" />
+        <entry key="..\:/AndroidProjects/FoodZ/app/src/main/res/layout/home_nav_data_view.xml" value="0.371875" />
         <entry key="..\:/Users/Manas Sardana/AndroidStudioProjects/FoodZ/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/Manas Sardana/AndroidStudioProjects/FoodZ/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Manas Sardana/AndroidStudioProjects/FoodZ/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.2703125" />

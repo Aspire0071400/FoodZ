@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.andro.foodz.databinding.FragmentProfileBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class ProfileFragment : Fragment() {
@@ -21,6 +22,7 @@ class ProfileFragment : Fragment() {
     var address: String? =null
 
     lateinit var auth: FirebaseAuth
+    lateinit var database: FirebaseFirestore
 
 
 
@@ -28,10 +30,12 @@ class ProfileFragment : Fragment() {
     ): View? {
         fragmentprofile = FragmentProfileBinding.inflate(inflater)
         auth = FirebaseAuth.getInstance()
+        database = FirebaseFirestore.getInstance()
 
+        fetchData()
 
         fragmentprofile.profileSave.setOnClickListener {
-            val user = auth.currentUser
+        /*    val user = auth.currentUser
             name = user?.displayName.toString()
             email = user?.email.toString()
             Toast.makeText(requireContext(), "$name, $email", Toast.LENGTH_SHORT).show()
@@ -45,7 +49,7 @@ class ProfileFragment : Fragment() {
             Snackbar.make(fragmentprofile.root,"Your Profile has been saved",Snackbar.LENGTH_LONG).show()
 
 
-
+        */
         }
 
         fragmentprofile.profileEdit.setOnClickListener {
@@ -68,5 +72,18 @@ class ProfileFragment : Fragment() {
         }
 
         return fragmentprofile.root
+    }
+
+    private fun fetchData() {
+        database.collection("users").document(auth.uid!!).get().addOnSuccessListener {
+            if (it.exists()){
+                fragmentprofile.profileName.setText(it.getString("name").toString())
+                fragmentprofile.profileEmail.setText(it.getString("email").toString())
+                fragmentprofile.profileNumber.setText(it.getString("phoneNo").toString())
+                fragmentprofile.profileAddress.setText(it.getString("address").toString())
+            }
+        }.addOnFailureListener {
+            Toast.makeText(requireContext(), "Unable to fetch data!!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
