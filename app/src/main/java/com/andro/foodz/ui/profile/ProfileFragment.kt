@@ -29,11 +29,9 @@ class ProfileFragment : Fragment() {
         fragmentprofile = FragmentProfileBinding.inflate(inflater)
         auth = FirebaseAuth.getInstance()
 
-
-        fragmentprofile.profileSave.setOnClickListener {
-            val user = auth.currentUser
+        val user = auth.currentUser
+            fragmentprofile.profileSave.setOnClickListener {
             name = user?.displayName.toString()
-            name = fragmentprofile.profileName.text.toString()
             email = user?.email.toString()
             Toast.makeText(requireContext(), "$name, $email", Toast.LENGTH_SHORT).show()
 
