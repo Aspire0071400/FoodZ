@@ -47,9 +47,8 @@ class ProfileFragment : Fragment() {
             fragmentprofile.profileEdit.isVisible=true
             fragmentprofile.profileSave.isVisible=false
             Snackbar.make(fragmentprofile.root,"Your Profile has been saved",Snackbar.LENGTH_LONG).show()
-
-
         */
+            updateData()
         }
 
         fragmentprofile.profileEdit.setOnClickListener {
@@ -74,7 +73,15 @@ class ProfileFragment : Fragment() {
         return fragmentprofile.root
     }
 
+    private fun updateData() {
+        database.collection("users").document(auth.uid!!).update(
+            "name", name,
+            "email", email
+        )
+    }
+
     private fun fetchData() {
+        //database.collection("users").document(auth.uid!!).collection("cart").document(i).get()
         database.collection("users").document(auth.uid!!).get().addOnSuccessListener {
             if (it.exists()){
                 fragmentprofile.profileName.setText(it.getString("name").toString())
@@ -86,4 +93,7 @@ class ProfileFragment : Fragment() {
             Toast.makeText(requireContext(), "Unable to fetch data!!", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
 }
