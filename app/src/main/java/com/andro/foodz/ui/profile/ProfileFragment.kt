@@ -26,6 +26,7 @@ class ProfileFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
+
         fragmentprofile = FragmentProfileBinding.inflate(inflater)
         auth = FirebaseAuth.getInstance()
 
