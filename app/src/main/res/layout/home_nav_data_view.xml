@@ -73,7 +73,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/explain"
+            android:id="@+id/Explanation"
             android:layout_width="110dp"
             android:layout_height="30dp"
             android:layout_marginStart="25dp"

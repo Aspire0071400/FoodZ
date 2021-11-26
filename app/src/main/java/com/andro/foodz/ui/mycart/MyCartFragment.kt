@@ -12,18 +12,4 @@ import com.andro.foodz.adapter.MyCartDataAdapter
 import com.andro.foodz.databinding.FragmentMycartBinding
 
 class MyCartFragment : Fragment() {
-    lateinit var fragmentMycart : FragmentMycartBinding
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<MyCartDataAdapter.ViewHolder>? = null
-
-    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
-    ): View? {
-        fragmentMycart = FragmentMycartBinding.inflate(inflater)
-        layoutManager =LinearLayoutManager(context)
-        fragmentMycart.myCartDataViewcycle.layoutManager = layoutManager
-
-        adapter = MyCartDataAdapter()
-        fragmentMycart.myCartDataViewcycle.adapter = adapter
-        return fragmentMycart.root
-    }
 }
