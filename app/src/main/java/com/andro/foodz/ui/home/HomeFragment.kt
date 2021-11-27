@@ -12,12 +12,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.andro.foodz.adapter.HomeNavDataAdapter
 import com.andro.foodz.databinding.FragmentHomeBinding
 import com.andro.foodz.model.HomeData
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.google.firebase.firestore.FirebaseFirestore
+import org.json.JSONArray
+import org.json.JSONObject
 
 class HomeFragment : Fragment() {
-    private lateinit var homeFragment : FragmentHomeBinding
+    private lateinit var homeFragment: FragmentHomeBinding
     private var dataArrayList = arrayListOf<HomeData>()
-    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -27,24 +32,26 @@ class HomeFragment : Fragment() {
     }
 
     private fun fetchData() {
-        db.collection("homeDatas")
-            .get().addOnSuccessListener {
-                for (document in it){
-                    val homeData = HomeData(
-                        document.getString("productName").toString(),
-                        document.getString("price").toString(),
-                        document.getString("category").toString(),
-                        document.getString("explanation").toString(),
-                        document.getString("imageUrl").toString()
-                    )
-                        dataArrayList.add(homeData)
-                        Log.d("TAG","Document: $document")
-                    }
-
-            }.addOnFailureListener {
-                Toast.makeText(requireContext(), "Unable to fetch data!!", Toast.LENGTH_SHORT).show()
+        val request: RequestQueue = Volley.newRequestQueue(context) //url
+        val stringRequest : StringRequest = StringRequest(Request.Method.GET,"https://foodz-android.000webhostapp.com/fetch_data/fetch_data.php",{
+            val dataArray : JSONArray = JSONArray(it)
+            for(i in 0 until dataArray.length()){
+                val homedata : JSONObject= dataArray.get(i) as JSONObject
+                val HomeDataDetails = HomeData(homedata.getString("productName").toString(),
+                    (homedata.getString("price").toString()),
+                    (homedata.getString("category").toString()),
+                    (homedata.getString("explanation").toString()),
+                    (homedata.getString("imageUrl").toString()))
+                dataArrayList.add(HomeDataDetails)
             }
-        homeFragment.homeNavDataViewcycle.layoutManager = LinearLayoutManager(context)
-        homeFragment.homeNavDataViewcycle.adapter = HomeNavDataAdapter(dataArrayList)
+             //for log option
+            homeFragment.homeNavDataViewcycle.layoutManager =LinearLayoutManager(context)
+            homeFragment.homeNavDataViewcycle.adapter       =HomeNavDataAdapter(dataArrayList)
+        },{
+            if (it.networkResponse.statusCode == 404){
+                fetchData()
+            }
+        })
+        request.add(stringRequest)
     }
 }

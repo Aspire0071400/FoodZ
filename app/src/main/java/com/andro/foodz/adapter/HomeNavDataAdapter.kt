@@ -14,6 +14,7 @@ import com.andro.foodz.databinding.HomeNavDataViewBinding
 import com.andro.foodz.model.HomeData
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import java.lang.reflect.Array
 
 
@@ -38,8 +39,17 @@ class HomeNavDataAdapter(private val dataList:ArrayList<HomeData>):RecyclerView.
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        var HomeNavDataAdapter: HomeNavDataViewBinding = HomeNavDataViewBinding.bind(itemView)
+        var HomeNavDataAdapter = HomeNavDataViewBinding.bind(itemView)
+        var add :FloatingActionButton
+        init {
+            val position : Int = absoluteAdapterPosition
+            add = itemView.findViewById(R.id.add)
+            itemView.setOnClickListener {
+               // Toast.makeText(itemView.context,"You clicked ${HomeNavDataAdapter.ProductName[position]}",Toast.LENGTH_SHORT).show()
 
+            }
+            add.setOnClickListener {  }
+        }
     }
 
 }
