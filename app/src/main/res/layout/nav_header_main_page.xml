@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Food Z"
+        android:text="@string/bittu_tikki_wala"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"

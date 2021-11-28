@@ -22,7 +22,7 @@ import org.json.JSONObject
 
 class HomeFragment : Fragment() {
     private lateinit var homeFragment: FragmentHomeBinding
-    private var dataArrayList = arrayListOf<HomeData>()
+    var dataArrayList = arrayListOf<HomeData>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -37,7 +37,8 @@ class HomeFragment : Fragment() {
             val dataArray : JSONArray = JSONArray(it)
             for(i in 0 until dataArray.length()){
                 val homedata : JSONObject= dataArray.get(i) as JSONObject
-                val HomeDataDetails = HomeData(homedata.getString("productName").toString(),
+                val HomeDataDetails = HomeData(homedata.getString("S_no").toInt(),
+                    (homedata.getString("productName").toString()),
                     (homedata.getString("price").toString()),
                     (homedata.getString("category").toString()),
                     (homedata.getString("explanation").toString()),
@@ -46,7 +47,7 @@ class HomeFragment : Fragment() {
             }
              //for log option
             homeFragment.homeNavDataViewcycle.layoutManager =LinearLayoutManager(context)
-            homeFragment.homeNavDataViewcycle.adapter       =HomeNavDataAdapter(dataArrayList)
+            homeFragment.homeNavDataViewcycle.adapter= HomeNavDataAdapter(dataArrayList)
         },{
             if (it.networkResponse.statusCode == 404){
                 fetchData()
@@ -54,4 +55,5 @@ class HomeFragment : Fragment() {
         })
         request.add(stringRequest)
     }
+
 }
