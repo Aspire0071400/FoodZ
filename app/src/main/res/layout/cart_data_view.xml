@@ -5,11 +5,11 @@
     android:id="@+id/HomeView2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="10dp"
     app:cardBackgroundColor="#FFAE65"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp"
-    app:contentPadding="4dp">
+    app:contentPadding="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout2"
@@ -73,7 +73,7 @@
             tools:ignore="SpeakableTextPresentationCheck,SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/explain2"
+            android:id="@+id/Explanation2"
             android:layout_width="110dp"
             android:layout_height="30dp"
             android:layout_marginStart="25dp"
