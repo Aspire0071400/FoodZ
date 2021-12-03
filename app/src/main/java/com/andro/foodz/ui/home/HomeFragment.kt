@@ -53,4 +53,5 @@ class HomeFragment : Fragment() {
         })
         request.add(stringRequest)
     }
+
 }
