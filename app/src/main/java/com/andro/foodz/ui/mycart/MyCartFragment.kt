@@ -1,5 +1,6 @@
 package com.andro.foodz.ui.mycart
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,6 +54,6 @@ class MyCartFragment : Fragment() {
             }
         })
         request.add(stringRequest)
-
     }
+
 }

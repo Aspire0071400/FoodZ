@@ -53,10 +53,4 @@ class HomeFragment : Fragment() {
         })
         request.add(stringRequest)
     }
-
-    fun sendData(){
-    }
-
-
-
 }

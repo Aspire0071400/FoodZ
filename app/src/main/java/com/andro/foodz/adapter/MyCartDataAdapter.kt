@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.andro.foodz.R
 import com.andro.foodz.databinding.CartDataViewBinding
 import com.andro.foodz.model.CartData
+import com.andro.foodz.ui.mycart.MyCartFragment
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -20,7 +22,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlin.math.absoluteValue
 
 class MyCartDataAdapter(val cartList:ArrayList<CartData>): RecyclerView.Adapter<MyCartDataAdapter.ViewHolder2>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): ViewHolder2 {
         val adapter = CartDataViewBinding.inflate(LayoutInflater.from(parent.context))
@@ -33,11 +34,13 @@ class MyCartDataAdapter(val cartList:ArrayList<CartData>): RecyclerView.Adapter<
         holder.Category2.text = cartList[position].category
         holder.Explanation2.text = cartList[position].explanation
         Glide.with(holder.image2).load(cartList[position].imageUrl).into(holder.image2)
+
     }
 
     override fun getItemCount(): Int {
         return cartList.size
     }
+
 
     class ViewHolder2(itemView : View):RecyclerView.ViewHolder(itemView){
         var ProductName2:TextView =itemView.findViewById(R.id.ProductName2)
@@ -48,32 +51,38 @@ class MyCartDataAdapter(val cartList:ArrayList<CartData>): RecyclerView.Adapter<
         var remove :FloatingActionButton = itemView.findViewById(R.id.remove)
 
         init {
+
             remove.setOnClickListener {
-                deleteData(ProductName2.text.toString())
+                var pn=ProductName2.text.toString()
+                if (pn.trim().isNotEmpty()){
+                deleteData(pn)
+                }else{
+                    Toast.makeText(remove.context, "empty", Toast.LENGTH_SHORT).show()
+                }
 
             }
         }
 
-        private fun deleteData(productName:String) {
+        private fun deleteData(pn:String) {
             val requestQueue = Volley.newRequestQueue(remove.context) //url
             val stringRequest=object : StringRequest(
                 Request.Method.POST,"https://foodz-android.000webhostapp.com/del_data/del_data.php", Response.Listener{
                 Log.d("Response", it.toString())
-                Toast.makeText(remove.context, "submit succeuuful", Toast.LENGTH_SHORT).show() },
+                Toast.makeText(remove.context, "deleted", Toast.LENGTH_SHORT).show() },
                 Response.ErrorListener {  Log.d("Server", it.toString())
                     Toast.makeText(remove.context, "internal error", Toast.LENGTH_SHORT).show()
                 }){
 
                 override fun getParams(): Map<String, String> {
                     val params: MutableMap<String, String> = HashMap()
-                    params["productName"] = productName
+                    params["pn"] = pn
                     return params
                 }
             }
             requestQueue.add(stringRequest)
 
         }
-    }
 
+    }
 
 }
