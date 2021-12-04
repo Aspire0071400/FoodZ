@@ -28,10 +28,7 @@
     <string name="menu_category">Category</string>
     <string name="category">Category</string>
     <string name="mycart">MyCart</string>
-    <string name="fast_food">Fast Food</string>
-    <string name="main_course">Main Course</string>
-    <string name="drinks">Drinks</string>
-    <string name="sweets">Sweets</string>
     <string name="mune_my_cart">MyCart</string>
     <string name="Profile">Profile</string>
+    <string name="order">Order</string>
 </resources>
