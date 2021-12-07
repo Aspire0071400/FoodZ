@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andro.foodz.adapter.OrderAdapter
@@ -25,7 +26,6 @@ class Payment:Fragment() {
     ): View? {
         payment = OrderSummaryBinding.inflate(inflater)
         orderfetch()
-        payment.amount.text =
         return payment.root
     }
 

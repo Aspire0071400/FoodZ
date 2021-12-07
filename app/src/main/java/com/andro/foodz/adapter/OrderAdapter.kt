@@ -1,15 +1,19 @@
 package com.andro.foodz.adapter
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.andro.foodz.MainPage
 import com.andro.foodz.R
-import com.andro.foodz.databinding.OrderSummaryBinding
 import com.andro.foodz.databinding.OrderViewBinding
 import com.andro.foodz.model.OrderData
+import com.andro.foodz.ui.home.HomeFragment
 import com.bumptech.glide.Glide
 
 class OrderAdapter(val orderList:ArrayList<OrderData>):RecyclerView.Adapter<OrderAdapter.ViewHolder3>() {
@@ -33,10 +37,10 @@ class OrderAdapter(val orderList:ArrayList<OrderData>):RecyclerView.Adapter<Orde
     class ViewHolder3(itemView: View):RecyclerView.ViewHolder(itemView) {
         var orderProduct :TextView =itemView.findViewById(R.id.Order_Product)
         var orderPrice   :TextView =itemView.findViewById(R.id.Order_Price)
-        var orderImage   :ImageView =itemView.findViewById(R.id.Order_image)
-        init {
-
-        }
+        var orderImage   :ImageView=itemView.findViewById(R.id.Order_image)
+        var Amount       :TextView =itemView.findViewById(R.id.amount)
+        var Pay          :Button   =itemView.findViewById(R.id.paymentBtn)
+        init {}
 
     }
 }
