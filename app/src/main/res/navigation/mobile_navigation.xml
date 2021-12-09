@@ -29,10 +29,4 @@
         android:label="order"
         tools:layout="@layout/order_summary" />
 
-    <fragment
-        android:id="@+id/nav_record"
-        android:name="com.andro.foodz.ui.history.History"
-        android:label="@string/history"
-        tools:layout="@layout/fragment_order_record"
-        />
 </navigation>

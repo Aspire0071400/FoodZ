@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andro.foodz.adapter.OrderAdapter
@@ -17,15 +19,25 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class Order:Fragment() {
-    private lateinit var payment : OrderSummaryBinding
+    private lateinit var order : OrderSummaryBinding
     var orderArrayList = arrayListOf<OrderData>()
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?
     ): View? {
-        payment = OrderSummaryBinding.inflate(inflater)
+
+        order = OrderSummaryBinding.inflate(inflater)
+        order.textView4.setOnClickListener {
+            order.textView6.isVisible=false
+            order.orderz.isVisible=false
+            order.imageview0.isVisible=true
+            order.textView4.isVisible=false
+            Toast.makeText(order.textView4.context, "Your Order Has Been Placed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(order.textView4.context, "You can pay prior,using UPI", Toast.LENGTH_LONG).show()
+        }
         orderfetch()
-        return payment.root
+        return order.root
     }
+
 
     private fun orderfetch() {
         val request: RequestQueue = Volley.newRequestQueue(context) //url
@@ -41,8 +53,8 @@ class Order:Fragment() {
                     orderArrayList.add(orderDetails)
                 }
                  //for log option
-                payment.order.layoutManager = LinearLayoutManager(context)
-                payment.order.adapter= OrderAdapter(orderArrayList)
+                order.orderz.layoutManager = LinearLayoutManager(context)
+                order.orderz.adapter= OrderAdapter(orderArrayList)
             },{
                 if (it.networkResponse.statusCode == 404){
                     orderfetch()

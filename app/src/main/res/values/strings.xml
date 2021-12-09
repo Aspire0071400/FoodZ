@@ -32,4 +32,6 @@
     <string name="Profile">Profile</string>
     <string name="order">Order</string>
     <string name="history">History</string>
+    <string name="foodz_s_order_window">FoodZ\'s Order Window</string>
+    <string name="confirm_your_order">Confirm Your Order</string>
 </resources>
