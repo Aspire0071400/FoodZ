@@ -1,15 +1,13 @@
-package com.andro.foodz.ui.payment
+package com.andro.foodz.ui.order
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andro.foodz.adapter.OrderAdapter
 import com.andro.foodz.databinding.OrderSummaryBinding
-import com.andro.foodz.model.CartData
 import com.andro.foodz.model.OrderData
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -18,7 +16,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-class Payment:Fragment() {
+class Order:Fragment() {
     private lateinit var payment : OrderSummaryBinding
     var orderArrayList = arrayListOf<OrderData>()
 

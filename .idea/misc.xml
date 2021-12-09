@@ -47,6 +47,7 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_home.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_maincourse.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_mycart.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_order_record.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_profile.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/home_nav_data_view.xml" value="0.22447916666666667" />
@@ -54,6 +55,7 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/nav_header_main_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/order_summary.xml" value="0.22" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/order_view.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/layout/oreder_rec_view.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/menu/main_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/FoodZ/app/src/main/res/menu/main_page_drawer.xml" value="0.33" />
         <entry key="..\:/Users/varun/StudioProjects/FoodZ/app/src/main/res/layout/activity_forget_password.xml" value="0.3578125" />

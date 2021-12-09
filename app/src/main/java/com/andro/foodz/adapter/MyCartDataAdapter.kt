@@ -7,21 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.andro.foodz.R
 import com.andro.foodz.databinding.CartDataViewBinding
 import com.andro.foodz.model.CartData
-import com.andro.foodz.ui.mycart.MyCartFragment
-import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlin.math.absoluteValue
 
-class MyCartDataAdapter(val cartList:ArrayList<CartData>): RecyclerView.Adapter<MyCartDataAdapter.ViewHolder2>() {
+class MyCartDataAdapter(val cartList: ArrayList<CartData>): RecyclerView.Adapter<MyCartDataAdapter.ViewHolder2>() {
 
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): ViewHolder2 {
         val adapter = CartDataViewBinding.inflate(LayoutInflater.from(parent.context))
@@ -66,7 +62,7 @@ class MyCartDataAdapter(val cartList:ArrayList<CartData>): RecyclerView.Adapter<
         private fun deleteData(pn:String) {
             val requestQueue = Volley.newRequestQueue(remove.context) //url
             val stringRequest=object : StringRequest(
-                Request.Method.POST,"https://foodz-android.000webhostapp.com/del_data/del_data.php", Response.Listener{
+                Method.POST,"https://foodz-android.000webhostapp.com/del_data/del_data.php", Response.Listener{
                 Log.d("Response", it.toString())
                 Toast.makeText(remove.context, "deleted", Toast.LENGTH_SHORT).show() },
                 Response.ErrorListener {  Log.d("Server", it.toString())

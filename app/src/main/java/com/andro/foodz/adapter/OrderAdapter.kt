@@ -1,46 +1,41 @@
 package com.andro.foodz.adapter
 
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.andro.foodz.MainPage
 import com.andro.foodz.R
 import com.andro.foodz.databinding.OrderViewBinding
 import com.andro.foodz.model.OrderData
-import com.andro.foodz.ui.home.HomeFragment
 import com.bumptech.glide.Glide
 
-class OrderAdapter(val orderList:ArrayList<OrderData>):RecyclerView.Adapter<OrderAdapter.ViewHolder3>() {
+class OrderAdapter(val orderList:ArrayList<OrderData>):RecyclerView.Adapter<OrderAdapter.ViewHolder5>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder3 {
-        val adapter= OrderViewBinding.inflate(LayoutInflater.from(parent.context))
-        return ViewHolder3(adapter.root)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderAdapter.ViewHolder5 {
+        val adapter = OrderViewBinding.inflate(LayoutInflater.from(parent.context))
+        return ViewHolder5(adapter.root)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder3, position: Int) {
-        holder.orderProduct.text = orderList[position].productName
-        holder.orderPrice.text   = orderList[position].price
-        Glide.with(holder.orderImage).load(orderList[position].imageUrl).into(holder.orderImage)
+    override fun onBindViewHolder(holder: OrderAdapter.ViewHolder5, position: Int) {
+        holder.ProductName.text = orderList[position].productName
+        holder.Price.text       = orderList[position].price
+        Glide.with(holder.ImageUrl).load(orderList[position].imageUrl).into(holder.ImageUrl)
     }
 
     override fun getItemCount(): Int {
-       return orderList.size
+        return orderList.size
     }
 
-    class ViewHolder3(itemView: View):RecyclerView.ViewHolder(itemView) {
-        var orderProduct :TextView =itemView.findViewById(R.id.Order_Product)
-        var orderPrice   :TextView =itemView.findViewById(R.id.Order_Price)
-        var orderImage   :ImageView=itemView.findViewById(R.id.Order_image)
-        var Amount       :TextView =itemView.findViewById(R.id.amount)
-        var Pay          :Button   =itemView.findViewById(R.id.paymentBtn)
-        init {}
+    class ViewHolder5(itemView: View):RecyclerView.ViewHolder(itemView) {
+        var ProductName:TextView = itemView.findViewById(R.id.Order_Product)
+        var Price      :TextView = itemView.findViewById(R.id.Order_Price)
+        var ImageUrl   :ImageView= itemView.findViewById(R.id.Order_image)
 
+        init {
+
+        }
     }
 }

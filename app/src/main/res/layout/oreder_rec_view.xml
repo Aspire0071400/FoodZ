@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#AF6AEC"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:contentPadding="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ADFFB884"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:fadeScrollbars="true"
+        android:fadingEdge="horizontal"
+        android:focusable="true"
+        android:padding="20dp"
+        android:saveEnabled="false"
+        android:verticalScrollbarPosition="right">
+
+        <ImageView
+            android:id="@+id/image4"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/ProductName4"
+            android:layout_width="200dp"
+            android:textColor="@color/black"
+            android:layout_height="40dp"
+            android:layout_marginStart="25dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/image4"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/Price4"
+            android:layout_width="67dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="5dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:drawableLeftCompat="@drawable/rupee"
+            app:layout_constraintStart_toEndOf="@+id/image4"
+            app:layout_constraintTop_toBottomOf="@+id/ProductName4" />
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="45dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image4"
+            app:layout_constraintTop_toBottomOf="@+id/ProductName4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

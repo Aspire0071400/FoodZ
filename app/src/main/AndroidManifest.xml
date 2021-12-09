@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodZ"
         tools:ignore="AllowBackup">
-
+        <activity
+            android:name=".ui.history.History"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".MainPage"
             android:exported="true"
