@@ -40,7 +40,7 @@ class Order:Fragment() {
                         (orderdata.getString("imageUrl").toString()))
                     orderArrayList.add(orderDetails)
                 }
-                //for log option
+                 //for log option
                 payment.order.layoutManager = LinearLayoutManager(context)
                 payment.order.adapter= OrderAdapter(orderArrayList)
             },{
