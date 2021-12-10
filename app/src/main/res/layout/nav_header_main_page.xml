@@ -14,28 +14,20 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="101dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/bittu_tikki_wala"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
+        app:srcCompat="@mipmap/logo_app" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="150dp"
+        android:layout_width="274dp"
         android:layout_height="32dp"
         android:fontFamily="monospace"
-        android:text="Trust in Name "
-        android:textSize="16sp" />
+        android:text="Khate Jao,Khushiyan Baante Jao !"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </LinearLayout>

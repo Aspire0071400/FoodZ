@@ -29,13 +29,13 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="264dp"
-        android:layout_height="211dp"
+        android:layout_width="270dp"
+        android:layout_height="240dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btw_logo" />
+        app:srcCompat="@drawable/logo_app" />
 
     <EditText
         android:id="@+id/lve_pass_et"
